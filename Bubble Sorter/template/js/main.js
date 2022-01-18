@@ -24,4 +24,6 @@ function setAndAdd() {
 
 //Button to create new array
 const newArrBtn = document.getElementById("newArray");
-newArrBtn.addEventListener("click", setAndAdd);
+if (newArrBtn) {
+  newArrBtn.addEventListener("click", setAndAdd);
+}

@@ -29,12 +29,11 @@ async function mergeSort(numsArray, divLen) {
     return merge(leftArray, rightArray);
   }
 
-  mergeSortHelper(numsArray);
-
   //Merge
   function merge(leftArray, rightArray) {
     let newArray = [];
     while (leftArray.length && rightArray.length) {
+      sleep(2000);
       if (leftArray[0] <= rightArray[0]) {
         newArray.push(leftArray.shift());
       } else {
@@ -47,34 +46,16 @@ async function mergeSort(numsArray, divLen) {
     while (rightArray.length) {
       newArray.push(rightArray.shift());
     }
+    for (i = 0; i < newArray.length; i++) {
+      newArray[i].style.background = "green";
+    }
     return newArray;
-    console.log(newArray);
   }
+  mergeSortHelper(numsArray);
 }
 
 //Button to merge sort numbers
 const mergeBtn = document.getElementById("merge");
-mergeBtn.addEventListener("click", mergeSort);
-
-//
-// //Merge Sort
-// let sortedArray = mergeSortHelper(numsArray);
-// let sortedDivs = document.querySelectorAll("DIV");
-// let sortedDivsLen = sortedDivs.length;
-// let sortedDivsArray = [];
-// for (let i = 0; i < sortedDivsLen; i++) {
-//     sortedDivsArray.push(parseInt(sortedDivs[i].style.height));
-// }
-
-//Merge Sort Helper
-// function mergeSortHelper(numsArray) {
-//   if (numsArray.length <= 1) {
-//     return numsArray;
-//   }
-//   let mid = Math.floor(numsArray.length / 2);
-//   let left = numsArray.slice(0, mid);
-//   let right = numsArray.slice(mid);
-//   left = mergeSortHelper(left);
-//   right = mergeSortHelper(right);
-//   return merge(left, right);
-// }
+if (mergeBtn) {
+  mergeBtn.addEventListener("click", mergeSort);
+}

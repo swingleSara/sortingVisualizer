@@ -43,4 +43,6 @@ async function bubbleSort(numsArray, divLen) {
 }
 //Button to bubble sort numbers
 const bubbleBtn = document.getElementById("bubble");
-bubbleBtn.addEventListener("click", bubbleSort);
+if (bubbleBtn) {
+  bubbleBtn.addEventListener("click", bubbleSort);
+}

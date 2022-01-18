@@ -42,8 +42,11 @@ async function insertionSort(numsArray, divLen) {
     //Changes bars colors to green once bar is in their final positions
     divs[k].style.background = "green";
   }
+  console.log(numsArray);
 }
 
 //Button to inesrtion sort numbers
 const insertionBtn = document.getElementById("insertion");
-insertionBtn.addEventListener("click", insertionSort);
+if (insertionBtn) {
+  insertionBtn.addEventListener("click", insertionSort);
+}
